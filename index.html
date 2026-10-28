@@ -739,10 +739,10 @@ function showPage(id){
   Object.keys(pages).forEach(k => pages[k].classList.toggle('active', k === id));
   Object.keys(navBtns).forEach(k => navBtns[k].classList.toggle('active', k === id));
   try{ history.replaceState(null, '', '#' + id); }catch(e){}
-  if(id === 'run'){ requestAnimationFrame(() => { fitCanvas(); render(); syncOverlay(); }); }
-  else if(id === 'stats'){ renderStats(); }
-  else if(id === 'story'){ renderChapters(); }
-  window.scrollTo({top:0,behavior:'smooth'});
+    if(id === 'run'){ requestAnimationFrame(() => { fitCanvas(); render(); syncOverlay(); }); }
+    else if(id === 'stats'){ renderStats(); }
+    else if(id === 'story'){ renderChapters(); }
+    window.scrollTo({top:0, behavior:'smooth'});
 }
 Object.keys(navBtns).forEach(k => navBtns[k].addEventListener('click', () => showPage(k)));
 $('backFromGame').addEventListener('click', () => showPage('garage'));
